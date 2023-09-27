@@ -1,6 +1,8 @@
 package gaia.ui
 
 
+import Globals.WORLD_HEIGHT
+import Globals.WORLD_WIDTH
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Cursor
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -11,8 +13,6 @@ import com.badlogic.gdx.scenes.scene2d.Action
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
-import gaia.Globals.WORLD_HEIGHT
-import gaia.Globals.WORLD_WIDTH
 import gaia.actions.CameraShakeAction
 import gaia.base.BaseActor
 import gaia.base.Clickable

@@ -1,23 +1,18 @@
 package com.odencave.i18n.gaia.base
 
-import com.badlogic.gdx.assets.AssetDescriptor
+import Globals
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
-import com.odencave.assets.Assets
-import gaia.Globals.WORLD_HEIGHT
-import gaia.Globals.WORLD_WIDTH
 import gaia.base.BaseActor
-import gaia.managers.assets.Asset
-import gaia.managers.assets.AssetManager.Companion.get
 import gaia.ui.utils.withColor
 
 class BackgroundGrid(
-    gridTexture: Texture = space.get(),
+    gridTexture: Texture,
     var speedX: Int = 32,
     var speedY: Int = 0,
-    val posX: Float = -WORLD_WIDTH,
-    val posY: Float = -WORLD_HEIGHT
+    val posX: Float = -Globals.WORLD_WIDTH,
+    val posY: Float = -Globals.WORLD_HEIGHT
 
 ) : BaseActor() {
 
@@ -39,8 +34,8 @@ class BackgroundGrid(
         textureRegion.setRegion(
             currentOffsetX.toInt(),
             currentOffsetY.toInt(),
-            (WORLD_WIDTH * 1.5).toInt(),
-            (WORLD_HEIGHT * 1.5).toInt()
+            (Globals.WORLD_WIDTH * 1.5).toInt(),
+            (Globals.WORLD_HEIGHT * 1.5).toInt()
         )
     }
 
@@ -48,10 +43,5 @@ class BackgroundGrid(
         batch.withColor(color) {
             it.draw(textureRegion, posX, posY)
         }
-    }
-
-    companion object {
-        @Asset
-        val space = AssetDescriptor(Assets.Backgrounds.one, Texture::class.java)
     }
 }

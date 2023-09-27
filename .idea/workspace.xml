@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f4019d-3272-404c-9d43-a104c0886b68" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/base/BackgroundGrid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/base/BackgroundGrid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/managers/TextBoy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/managers/TextBoy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/managers/fonts/FontManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/managers/fonts/FontManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/BasicScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/BasicScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/Letterbox.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/Letterbox.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,23 +32,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Gaia" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Gaia" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Gaia" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -78,14 +67,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/grego/Documents/projects/Gaia/src/main/kotlin/utils"
+    "last_opened_file_path": "C:/Users/grego/IdeaProjects/Gaia/src/main/kotlin"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\grego\IdeaProjects\Gaia\src\main\kotlin" />
       <recent name="C:\Users\grego\Documents\projects\Gaia\src\main\kotlin\utils" />
       <recent name="C:\Users\grego\Documents\projects\Gaia\src\main\kotlin\ui\utils" />
       <recent name="C:\Users\grego\Documents\projects\Gaia\src\main\kotlin\managers\events" />
@@ -97,7 +86,29 @@
       <recent name="ui" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.Gaia [build]">
+    <configuration name="Gaia [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Gaia [nls]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -122,6 +133,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Gaia [build]" />
         <item itemvalue="Gradle.Gaia [nls]" />
       </list>
     </recent_temporary>
@@ -135,6 +147,22 @@
       <option name="presentableId" value="Default" />
       <updated>1694552920136</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added more stuff from the gb project.">
+      <option name="closed" value="true" />
+      <created>1695856605064</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695856605064</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Added more stuff from the gb project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more stuff from the gb project." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

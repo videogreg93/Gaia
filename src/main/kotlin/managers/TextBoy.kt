@@ -2,7 +2,7 @@ package gaia.managers
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.utils.I18NBundle
-import gaia.generated.Nls
+import com.odencave.i18n.Nls
 import gaia.managers.prefs.Prefs
 import ktx.i18n.get
 import java.util.*
