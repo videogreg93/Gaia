@@ -1,6 +1,6 @@
-package ui
+package gaia.ui
 
-import com.gregory.managers.MegaManagers
+import gaia.managers.MegaManagers
 
 abstract class Modal(title: String, val showOverlay: Boolean = true, val pauseMainScreen: Boolean = false) : BasicScreen(title) {
 

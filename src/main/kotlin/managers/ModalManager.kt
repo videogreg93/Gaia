@@ -1,6 +1,7 @@
-package com.gregory.managers
+package gaia.managers
 
-import ui.Modal
+import gaia.ui.Modal
+
 
 class ModalManager {
 
@@ -31,7 +32,7 @@ class ModalManager {
     }
 
     interface ModalListener {
-        abstract val currentModal: Modal?
+        val currentModal: Modal?
         fun addModal(modal: Modal)
         fun removeModal(modal: Modal)
     }

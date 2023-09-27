@@ -1,4 +1,4 @@
-package com.gregory.managers
+package gaia.managers
 
 import ktx.log.info
 import kotlin.random.Random

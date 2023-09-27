@@ -1,4 +1,4 @@
-package com.gregory.base
+package gaia.base
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
@@ -99,6 +99,7 @@ open class BaseActor(texture: Texture? = null, x: Float = 0f, y: Float = 0f) : A
             x + width / 2f,
             y + height / 2f
         )
+        setAbsoluteOrigin(centerPoint.x, centerPoint.y)
         currentAnimation?.let {
             currentAnimationTime += delta
         }
@@ -173,7 +174,7 @@ open class BaseActor(texture: Texture? = null, x: Float = 0f, y: Float = 0f) : A
         }
     }
 
-    open internal fun updateSprite() {
+    internal open fun updateSprite() {
         sprite?.setPosition(visualX, visualY)
         sprite?.rotation = rotation
         sprite?.setOrigin(originX, originY)
@@ -281,10 +282,10 @@ open class BaseActor(texture: Texture? = null, x: Float = 0f, y: Float = 0f) : A
     fun addFlickerAction(flickerInterval: Float = 1f, repetitions: Int = RepeatAction.FOREVER): Float {
         alpha = 1f
         val hideAction = Actions.delay(flickerInterval, Actions.run {
-            alpha = 0f
+            shouldDraw = false
         })
         val showAction = Actions.delay(flickerInterval, Actions.run {
-            alpha = 1f
+            shouldDraw = true
         })
         val sequence = Actions.sequence(hideAction, showAction)
         val repeatAction = Actions.repeat(repetitions, sequence)
@@ -319,6 +320,8 @@ open class BaseActor(texture: Texture? = null, x: Float = 0f, y: Float = 0f) : A
             it.texture = texture
         } ?: ktx.log.error { "Sprite is null, cannot assign new texture for $name" }
     }
+
+    fun pos(): Vector2 = Vector2(x, y)
 
     companion object {
         val UNFOCUSED_COLOR = Color.GRAY

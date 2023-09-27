@@ -1,10 +1,13 @@
-package com.gregory.managers
+package gaia.managers
 
-import com.gregory.managers.assets.AssetManager
-import com.gregory.managers.context.MainContext
-import com.gregory.managers.fonts.FontManager
-import com.gregory.managers.prefs.Prefs
+import com.odencave.i18n.gaia.ui.shaders.Shaders
+import gaia.managers.assets.AssetManager
+import gaia.managers.context.MainContext
+import gaia.managers.fonts.FontManager
+import gaia.managers.input.InputActionManager
+import gaia.managers.prefs.Prefs
 import ktx.inject.Context
+import kotlin.reflect.KClass
 
 object MegaManagers {
     val randomManager: RandomManager = RandomManager()
@@ -19,16 +22,28 @@ object MegaManagers {
     val textBoy = TextBoy()
     lateinit var currentContext: Context
 
-    fun init(args: Array<String>) {
-            MainContext.register()
-            currentContext = MainContext.context
-            prefs.init()
-            assetManager.init()
-            inputActionManager.init()
-            fontManager.init()
-            soundManager.init()
-            textBoy.init()
+    val gameSpecificManagers: HashMap<KClass<*>, Any> = HashMap()
 
+    fun init(args: Array<String>) {
+        MainContext.register()
+        currentContext = MainContext.context
+        prefs.init()
+        assetManager.init()
+        inputActionManager.init()
+        fontManager.init()
+        soundManager.init()
+        textBoy.init()
+        Shaders.initShaders()
+        prefs.folder
+    }
+
+    fun registerManager(manager: Manager) {
+        manager.init()
+        gameSpecificManagers[manager::class as KClass<Manager>] = manager
+    }
+
+    inline fun <reified T : Manager> getManager(): T {
+        return gameSpecificManagers[T::class] as T
     }
 
     fun dispose() {

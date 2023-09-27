@@ -1,14 +1,22 @@
-package com.gregory.managers
+package gaia.managers.input
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
+import com.badlogic.gdx.InputMultiplexer
 import com.badlogic.gdx.assets.AssetDescriptor
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.scenes.scene2d.Action
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
-import com.gregory.managers.assets.AssetManager.Companion.get
+import gaia.managers.assets.AssetManager.Companion.get
+import gaia.managers.context.MainContext
+import gaia.utils.addAsInput
 import ktx.app.KtxInputAdapter
 import ktx.log.debug
 import ktx.log.info
+import java.io.Console
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 // TODO maybe separate all of these classes into different files
 class InputActionManager : KtxInputAdapter {
@@ -22,8 +30,10 @@ class InputActionManager : KtxInputAdapter {
     var inputEnabled = true
 
     fun init() {
+        Gdx.input.inputProcessor = this
 //        controllerManager.init()
     }
+
 
     /**
      * Latest subscribers get priority
@@ -174,17 +184,16 @@ class InputActionManager : KtxInputAdapter {
         put(Input.Keys.DOWN, ActionListener.InputAction.DOWN)
         put(Input.Keys.LEFT, ActionListener.InputAction.LEFT)
         put(Input.Keys.RIGHT, ActionListener.InputAction.RIGHT)
-        put(Input.Keys.ENTER, ActionListener.InputAction.SELECT)
-        put(Input.Keys.Z, ActionListener.InputAction.ACTIVATE)
-        put(Input.Keys.ESCAPE, ActionListener.InputAction.QUIT)
-        put(Input.Keys.D, ActionListener.InputAction.OPEN_DAEMON_SCREEN)
-        put(Input.Buttons.LEFT, ActionListener.InputAction.CLICK)
-        put(Input.Keys.A, ActionListener.InputAction.ROTATE_CARDS_LEFT)
-        put(Input.Keys.S, ActionListener.InputAction.ROTATE_CARDS_RIGHT)
-        put(Input.Keys.X, ActionListener.InputAction.CANCEL)
-        put(Input.Keys.C, ActionListener.InputAction.SPECIAL_1)
-        put(Input.Keys.SPACE, ActionListener.InputAction.DRAW_CARDS)
-        put(Input.Keys.BACKSPACE, ActionListener.InputAction.SECONDARY_ACTION)
+        put(Input.Keys.X, ActionListener.InputAction.SHOOT)
+        put(Input.Keys.ENTER, ActionListener.InputAction.START)
+        put(Input.Keys.NUM_1, ActionListener.InputAction.ONE)
+        put(Input.Keys.NUM_2, ActionListener.InputAction.TWO)
+        put(Input.Keys.NUM_3, ActionListener.InputAction.THREE)
+        put(Input.Keys.NUM_4, ActionListener.InputAction.FOUR)
+        put(Input.Keys.NUM_7, ActionListener.InputAction.SEVEN)
+        put(Input.Keys.NUM_8, ActionListener.InputAction.EIGHT)
+        put(Input.Keys.NUM_9, ActionListener.InputAction.NINE)
+        put(Input.Keys.NUM_0, ActionListener.InputAction.ZERO)
     }
 
     val inputMappings: HashMap<Int, ActionListener.InputAction>
@@ -246,10 +255,12 @@ interface ActionListener {
     }
 
     enum class InputAction {
-        UP, DOWN, LEFT, RIGHT, SELECT, ACTIVATE, QUIT, SPECIAL_1, CLICK, RIGHT_CLICK, ROTATE_CARDS_LEFT, ROTATE_CARDS_RIGHT, OPEN_DAEMON_SCREEN, CANCEL, DRAW_CARDS, SECONDARY_ACTION,
+        UP, DOWN, LEFT, RIGHT, ONE, TWO, THREE, FOUR, SEVEN, EIGHT, NINE, ZERO, CLICK, RIGHT_CLICK, SHOOT, START
     }
 }
 
 val ActionListener.InputAction.prettyName: String
-    get() = name.lowercase().capitalize().replace("_", " ")
+    get() = name.lowercase()
+        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        .replace("_", " ")
 

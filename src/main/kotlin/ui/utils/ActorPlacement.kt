@@ -1,16 +1,18 @@
-package ui.utils
+package gaia.ui.utils
 
-import Globals.WORLD_HEIGHT
-import Globals.WORLD_WIDTH
+
 import com.badlogic.gdx.math.Vector2
-import com.gregory.base.BaseActor
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction
+import gaia.Globals
+import gaia.Globals.WORLD_HEIGHT
+import gaia.Globals.WORLD_WIDTH
+import gaia.base.BaseActor
+import gaia.ui.generic.Label
+import gaia.utils.sumByFloat
 import ktx.log.info
-import ui.generic.Label
-import utils.sumByFloat
 
-// TODO not make margin negative
 fun BaseActor.alignTop(margin: Float = 0f) {
-    y = WORLD_HEIGHT / 2 - height - margin
+    y = WORLD_HEIGHT / 2 - height + margin
 }
 
 fun BaseActor.alignBottom(margin: Float = 0f) {
@@ -164,5 +166,12 @@ fun <T : BaseActor> T.calculatePositionFor(dsl: T.() -> Unit): Vector2 {
     val newPosition = Vector2(x, y)
     setPosition(currentPosition.x, currentPosition.y)
     return newPosition
+}
+
+fun SequenceAction.skip() {
+    val indexField = SequenceAction::class.java.getDeclaredField("index")
+    indexField.isAccessible = true
+    val currentIndex = indexField.getInt(this)
+    indexField.setInt(this, currentIndex + 1)
 }
 

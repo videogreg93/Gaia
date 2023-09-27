@@ -1,5 +1,6 @@
-package com.gregory.system.events
+package gaia.managers.events
 
-interface EventInstance {
+abstract class EventInstance {
     val identifier: String
+        get() = this::class.simpleName ?: error("Cannot use abstract classes with event instance")
 }

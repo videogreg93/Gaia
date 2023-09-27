@@ -1,6 +1,5 @@
-package com.gregory.managers.context
+package gaia.managers.context
 
-import com.badlogic.gdx.ai.btree.utils.BehaviorTreeLibraryManager
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import ktx.inject.Context
@@ -21,14 +20,13 @@ object MainContext {
             bindSingleton(Random(Random.nextInt()))
             bindSingleton(
                 Reflections(
-                    "com.gregory",
+                    "com.odencave",
                     FieldAnnotationsScanner(),
                     TypeAnnotationsScanner(),
                     SubTypesScanner()
                 )
             )
 //            bindSingleton { Executor() as CommandExecutor }
-            bindSingleton { BehaviorTreeLibraryManager.getInstance() }
             /*bindSingleton {
                 GUIConsole(
                     VisUI.getSkin(),

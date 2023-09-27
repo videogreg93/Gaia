@@ -1,4 +1,4 @@
-package ui.utils
+package gaia.ui.utils
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.Batch

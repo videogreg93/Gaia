@@ -1,10 +1,10 @@
-package utils
+package gaia.utils
 
 import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.graphics.g2d.Sprite
-import com.gregory.base.BaseActor
+import gaia.base.BaseActor
 
 fun BitmapFont.drawCenteredVerticallyOn(text: CharSequence, x: Float, batch: Batch?, actor: BaseActor) {
     actor.sprite?.let { sprite ->

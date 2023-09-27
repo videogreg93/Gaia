@@ -1,7 +1,6 @@
-package ui
+package gaia.ui
 
-import Globals.WORLD_HEIGHT
-import Globals.WORLD_WIDTH
+
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Cursor
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -12,11 +11,14 @@ import com.badlogic.gdx.scenes.scene2d.Action
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
-import com.gregory.base.BaseActor
-import com.gregory.base.Clickable
-import com.gregory.base.Crew
-import com.gregory.managers.ActionListener
-import com.gregory.managers.MegaManagers
+import gaia.Globals.WORLD_HEIGHT
+import gaia.Globals.WORLD_WIDTH
+import gaia.actions.CameraShakeAction
+import gaia.base.BaseActor
+import gaia.base.Clickable
+import gaia.base.Crew
+import gaia.managers.MegaManagers
+import gaia.managers.input.ActionListener
 import ktx.app.KtxScreen
 import ktx.log.info
 
@@ -124,11 +126,11 @@ abstract class BasicScreen(
         }
     }
 
-//    fun shakeCamera(duration: Float = 0.4f, power: Float = 3.2f) {
-//        MegaManagers.screenManager.addGlobalAction(
-//            CameraShakeAction(camera, duration, power)
-//        )
-//    }
+    fun shakeCamera(duration: Float = 0.4f, power: Float = 3.2f) {
+        MegaManagers.screenManager.addGlobalAction(
+            CameraShakeAction(camera, duration, power)
+        )
+    }
 
     fun addLetterboxes(top: Letterbox, bottom: Letterbox) {
         hudCrew.addMembers(top, bottom)

@@ -1,11 +1,11 @@
-package com.gregory.managers
+package gaia.managers
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Action
-import com.gregory.managers.assets.AssetManager.Companion.get
-import ui.BasicScreen
+import gaia.managers.assets.AssetManager.Companion.get
+import gaia.ui.BasicScreen
 
 class ScreenManager {
     var screenListener: ChangeScreenListener? = null

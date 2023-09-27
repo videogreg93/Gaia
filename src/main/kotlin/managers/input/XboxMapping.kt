@@ -1,4 +1,4 @@
-package com.gregory.managers.input
+package gaia.managers.input
 
 import com.badlogic.gdx.controllers.Controller
 import com.badlogic.gdx.utils.SharedLibraryLoader

@@ -1,16 +1,16 @@
-package ui.generic
+package gaia.ui.generic
 
 import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.BitmapFont
-import com.gregory.base.BaseActor
-import com.odencave.i18n.Nls
+import gaia.base.BaseActor
+import gaia.generated.Nls
+import gaia.ui.utils.centerHorizontallyOn
+import gaia.ui.utils.centerVerticallyOn
+import gaia.utils.getHeight
+import gaia.utils.getWidth
+import gaia.utils.text
+import gaia.utils.wrapped
 import ktx.actors.alpha
-import ui.utils.centerHorizontallyOn
-import ui.utils.centerVerticallyOn
-import utils.getHeight
-import utils.getWidth
-import utils.text
-import utils.wrapped
 
 open class Label(var text: String, val font: BitmapFont, x: Float = 0f, y: Float = 0f) : BaseActor(null, x, y) {
 
@@ -19,8 +19,13 @@ open class Label(var text: String, val font: BitmapFont, x: Float = 0f, y: Float
     var centerHorizontalCallback: (() -> Float)? = null
     var centerVerticallyCallback: (() -> Float)? = null
 
+
     init {
         drawIndex = 10
+    }
+
+    override fun getY(): Float {
+        return super.getY() + height
     }
 
     override fun act(delta: Float) {

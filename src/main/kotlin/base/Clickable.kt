@@ -1,4 +1,4 @@
-package com.gregory.base
+package gaia.base
 
 interface Clickable {
     /**

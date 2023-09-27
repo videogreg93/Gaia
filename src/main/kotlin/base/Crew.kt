@@ -1,4 +1,4 @@
-package com.gregory.base
+package gaia.base
 
 import com.badlogic.gdx.graphics.Camera
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -57,6 +57,8 @@ class Crew(val batch: SpriteBatch, private val camera: Camera = OrthographicCame
             it.removeFromCrew()
         }
     }
+
+    inline fun <reified T : BaseActor> getAllOf() = members.filterIsInstance<T>()
 
     /**
      * Calls act on each actor, modifying [delta] by that actor's speedMultiplier

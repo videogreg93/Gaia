@@ -1,8 +1,9 @@
-package utils
+package gaia.utils
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont
-import com.gregory.managers.MegaManagers
-import com.odencave.i18n.Nls
+import gaia.generated.Nls
+import gaia.managers.MegaManagers
+import java.util.*
 
 /**
  * Returns a string with new line characters every couple of words
@@ -58,7 +59,8 @@ fun String.removeColor(): String {
     return this.split("]")[1].dropLast(1)
 }
 
-fun String.cap(): String = capitalize()
+fun String.cap(): String =
+    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
 
 val Nls.text: String
     get() = MegaManagers.textBoy.text(this)

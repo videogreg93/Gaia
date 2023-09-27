@@ -1,7 +1,8 @@
-package ui
+package gaia.ui
 
-import Globals.WORLD_WIDTH
-import com.gregory.base.BaseActor
+
+import gaia.Globals.WORLD_WIDTH
+import gaia.base.BaseActor
 
 class Letterbox : BaseActor() {
 

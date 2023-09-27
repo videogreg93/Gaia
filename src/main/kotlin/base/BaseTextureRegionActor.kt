@@ -1,4 +1,4 @@
-package com.gregory.base
+package gaia.base
 
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.TextureRegion

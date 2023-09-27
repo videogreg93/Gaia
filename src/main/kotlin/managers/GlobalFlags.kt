@@ -1,9 +1,9 @@
-package com.gregory.managers
+package gaia.managers
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Preferences
 import com.badlogic.gdx.utils.Json
-import com.gregory.managers.prefs.Prefs
+import gaia.managers.prefs.Prefs
 import ktx.log.info
 import kotlin.properties.Delegates
 import kotlin.properties.ObservableProperty

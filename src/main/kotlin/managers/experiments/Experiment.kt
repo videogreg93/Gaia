@@ -1,4 +1,4 @@
-package com.gregory.managers.experiments
+package gaia.managers.experiments
 
 enum class Experiment(val value: String) {
     MainMenuTutorialPopup("mainmenututorialpopup"),
